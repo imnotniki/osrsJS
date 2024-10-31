@@ -1,0 +1,10 @@
+bot.js
+ge.js
+.env
+node_modules
+items.db
+osrs-pug.js
+views/index.pug
+query2.js
+query.js
+views/styles.css

@@ -1,0 +1,24 @@
+.dropdown {
+    position: absolute;
+    border: 1px solid #ccc;
+    background: white;
+    z-index: 1000;
+    display: none; /* Hidden by default */
+    max-height: 200px;
+    overflow-y: auto; /* Scroll if there are too many items */
+    width: 100%; /* Match the input width */
+}
+.dropdown-item {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.dropdown-item img {
+    width: 30px; /* Set image size */
+    height: 30px;
+    margin-right: 10px; /* Space between image and text */
+}
+.dropdown-item:hover {
+    background-color: #f0f0f0; /* Highlight on hover */
+}

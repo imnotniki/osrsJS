@@ -10,8 +10,10 @@
 
 ##### npm packages
 ```bash
-npm install runescape-api better-sqlite3 express
+npm install runescape-api better-sqlite3 express pug body-parser tor-control axios socks-proxy-agent dotenv
 ```
+
+We use tor-control and axios to scrape the web.
 
 #### Database layout for now
 ##### Items
