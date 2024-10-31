@@ -8,12 +8,12 @@
 - Track favorited items
 - API to RuneLite
 
-#####npm packages
+##### npm packages
 ```bash
 npm install runescape-api better-sqlite3 express
 ```
 
-####Database layout for now
+#### Database layout for now
 ##### Items
 
 | itemid  | itemname  | itemimg |
