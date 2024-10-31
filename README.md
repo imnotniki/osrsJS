@@ -41,7 +41,7 @@ npm install runescape-api better-sqlite3 express
 - Open profit!
 
 | priceid  | itemid  | price | timestamp |
-| :------------ |:---------------| -----:| -----:| -----:|
+| :------------ |:---------------| -----:| -----:|
 | 1 | 564 | 85 | 30.10.2024 04:00
 | 2 | 564 | 86 | 30.10.2024 08:00
 
