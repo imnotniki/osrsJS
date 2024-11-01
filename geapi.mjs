@@ -11,6 +11,7 @@ class GrandExchange {
               'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36'
             }
         }
+        this.wikiapi_url = "https://prices.runescape.wiki/api/v1/osrs/latest?id=";
     }
 
     async getItem(itemId) {
@@ -41,6 +42,21 @@ class GrandExchange {
         const data = await response.json();
         
         return Object.values(data); // Adjust this according to the actual response structure
+    }
+
+    async wiki5m(itemId){
+        const response = await fetch('https://prices.runescape.wiki/api/v1/osrs/5m', this.options);
+        const data = await response.json();
+        
+        return data;
+    }
+
+    async wikiGetLatest(itemId){
+        const new_url = this.wikiapi_url + itemId;
+        const response = await fetch(new_url);
+        const data = await response.json();
+        
+        return data;
     }
 
     async pattern(itemId){
