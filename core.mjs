@@ -53,3 +53,23 @@ export function createTables(db){
     create3.run();
     create4.run();
 }
+
+export function print(args){
+    console.log(args);
+}
+
+export function convertTime(unixTimestamp, format = 'ISO') {
+    // Create a new Date object from the Unix timestamp (in milliseconds)
+    const date = new Date(unixTimestamp * 1000);
+
+    // Format the date based on the specified format
+    if (format === 'ISO') {
+        return date.toISOString(); // Returns date in ISO 8601 format
+    } else if (format === 'local') {
+        return date.toLocaleString(); // Returns date in local format
+    } else if (format === 'UTC') {
+        return date.toUTCString(); // Returns date in UTC format
+    } else {
+        throw new Error(`Unsupported format: ${format}. Use 'ISO', 'local', or 'UTC'.`);
+    }
+}

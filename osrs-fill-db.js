@@ -16,8 +16,19 @@ import { SocksProxyAgent } from 'socks-proxy-agent';
 const tor_password = process.env.tor_password;
 const tor_control_port = process.env.tor_control_port;
 //createTables(db);
-
-
+const filePath = 'ua.txt';
+function readUserAgents(filePath) {
+    return new Promise((resolve, reject) => {
+        fs.readFile(filePath, 'utf8', (err, data) => {
+            if (err) {
+                return reject(err);
+            }
+            // Split the file content by new lines and filter out empty lines
+            const userAgents = data.split('\n').filter(line => line.trim() !== '');
+            resolve(userAgents);
+        });
+    });
+}
 
 (async () => {
     
@@ -36,7 +47,7 @@ const tor_control_port = process.env.tor_control_port;
         "Mozilla/5.0 (X11; Linux i686; rv:124.0) Gecko/20100101 Firefox/124.0"
     ];
 
-    let i = 488;
+    let i = 24081;
     let userAgentIndex = 0;
     while(i < 30000){
         const currentAgent = userAgents[userAgentIndex];

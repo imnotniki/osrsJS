@@ -43,6 +43,25 @@ class DBHandler {
         return result;
     }
 
+    async getAllTrackers(){
+        try{
+            const queryItem = this.db.prepare('SELECT tracker.itemid, chatid, itemname FROM tracker LEFT JOIN items on tracker.itemid = items.itemid');
+            const matches = queryItem.run();
+            console.log(matches);
+            return matches;
+        }catch(error){
+            return [];
+        }
+    }
+
+    async addTracker(chatid, itemid){
+        try{
+            const addTracker = this.db.prepare('INSERT INTO tracker (chatid, itemid) VALUES (?, ?)');
+            addTracker.run(chatid, itemid);
+        }catch(error){
+        }
+    }
+
     async queryItem(itemName){
         try{
             const queryItem = this.db.prepare('SELECT * FROM items WHERE itemname = ?', itemName);
